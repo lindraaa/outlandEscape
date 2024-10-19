@@ -6,7 +6,7 @@ require("dotenv").config();
 // console.log(process.env.CLOUDINARY_KEY)
 
 //Mongo atlas
-const dbUrl = process.env.db_url
+const dbUrl = process.env.db_url;
 
 const express = require("express")
 const app = express()
