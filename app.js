@@ -37,7 +37,7 @@ const session = require("express-session");
 
 const sessionConfig = {
     store: MongoStore.create({
-        mongoUrl: localhostUrl,
+        mongoUrl: dbUrl,
         ttl: 14 * 24 * 60 * 60 // = 14 days. Default
     }),
     name: "session",
@@ -91,7 +91,7 @@ app.use(express.static(path.join(__dirname, "public")))
 //mongoose
 
 // 'mongodb://localhost:27017/yelp-camp'
-mongoose.connect(localhostUrl)
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("Database Connected")
     })
