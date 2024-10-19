@@ -91,7 +91,9 @@ app.use(express.static(path.join(__dirname, "public")))
 //mongoose
 
 // 'mongodb://localhost:27017/yelp-camp'
-mongoose.connect(dbUrl)
+mongoose.connect(dbUrl,{useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000})
     .then(() => {
         console.log("Database Connected")
     })
