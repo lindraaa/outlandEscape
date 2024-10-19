@@ -36,10 +36,7 @@ app.use(helmet({ contentSecurityPolicy: false }));
 const session = require("express-session");
 
 const sessionConfig = {
-    store: MongoStore.create({
-        mongoUrl: dbUrl,
-        ttl: 14 * 24 * 60 * 60 // = 14 days. Default
-    }),
+    store: MongoStore.create({ mongoUrl:dbUrl  }),
     name: "session",
     secret: "thisshouldbesecret",
     resave: false,
